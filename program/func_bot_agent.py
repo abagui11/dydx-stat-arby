@@ -195,7 +195,7 @@ class BotAgent:
                     # TO DO: consider sending message here
 
                     # Send message
-                    send_message("Something really bad happened. I couldn't execute. Error code: 100")
+                    send_message("Something bad happened. I couldn't execute. Error code: 100")
 
                     # ABORT
                     exit(1)
@@ -207,7 +207,7 @@ class BotAgent:
                 print(order_status_close_order)
 
                 # Send message
-                send_message("Something really bad happened. I couldn't execute. Error code: 101")
+                send_message("Something bad happened. I couldn't execute. Error code: 101")
 
                 # ABORT
                 exit(1)
