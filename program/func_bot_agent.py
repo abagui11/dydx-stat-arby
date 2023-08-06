@@ -1,6 +1,7 @@
 from func_private import place_market_order, check_order_status
 from datetime import datetime, timedelta
 import time
+from func_messaging import send_message
 from pprint import pprint
 
 # Making a class agent: manages the open and checking of trades
@@ -193,6 +194,9 @@ class BotAgent:
                     print(order_status_close_order)
                     # TO DO: consider sending message here
 
+                    # Send message
+                    send_message("Something really bad happened. I couldn't execute. Error code: 100")
+
                     # ABORT
                     exit(1)
             except Exception as e:
@@ -201,7 +205,9 @@ class BotAgent:
                 print("ABORT PROGRAM")
                 print("Unexpected Error")
                 print(order_status_close_order)
-                # TO DO: consider sending message here
+
+                # Send message
+                send_message("Something really bad happened. I couldn't execute. Error code: 101")
 
                 # ABORT
                 exit(1)
